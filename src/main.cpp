@@ -44,6 +44,14 @@ void loop()
 
 	tv.draw_row(0, 0, tv.hres(), 1);
 	tv.draw_row(tv.vres() - 1, 0, tv.hres(), 1);
+	tv.draw_column(0, 0, tv.vres(), 1);
+	tv.draw_column(tv.hres() - 1, 0, tv.vres(), 1);
+
+	for (int i = 0; i < tv.hres(); ++i)
+	{
+		int y = yCenter + sin(i / 10) * 5;
+		tv.set_pixel(i, y, 1);
+	}
 
 	tv.delay(1000);
 	//tv.shift(100, 0);
